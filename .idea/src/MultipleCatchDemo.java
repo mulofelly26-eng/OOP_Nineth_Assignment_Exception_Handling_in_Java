@@ -13,5 +13,11 @@ public class MultipleCatchDemo {
                 System.out.println("  Unexpected problem: " + e.getClass().getSimpleName());
             }
         }
+        try {
+            int[] numbers = new int[3];
+            numbers[5] = 1;
+        } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+            System.out.println("  Multi-catch caught: " + e.getMessage());
+        }
     }
 }
